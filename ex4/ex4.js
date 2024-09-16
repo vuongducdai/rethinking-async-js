@@ -25,7 +25,7 @@ function getFile(file) {
     fakeAjax(file, resolve);
   });
 }
-
+// comment
 function promiseAll(listOfFiles) {
   const listOfPromises = listOfFiles.map(getFile);
 
