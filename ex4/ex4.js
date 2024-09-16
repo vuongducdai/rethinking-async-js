@@ -31,9 +31,12 @@ function promiseAll(listOfFiles) {
 
   listOfPromises.reduce(
     (accumulator, currentValue) =>
-      accumulator.then(output).then(() => currentValue),
+      accumulator.then(() => currentValue)
+			.then(output),
     Promise.resolve()
   );
 }
 
-promiseAll(['file1', 'file2', 'file3']);
+promiseAll(["file1", "file2", "file3"]).then(() => {
+	output("Completed!");
+})
